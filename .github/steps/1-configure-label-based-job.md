@@ -39,6 +39,7 @@ For now, we'll focus on staging. We'll spin up and destroy our environment in a 
 1. Name your workflow `deploy-staging.yml`
 1. Edit the contents of this file and remove all triggers and jobs.
 1. Edit the contents of the file to add a conditional that filters the `build` job when there is a label present called **stage**. Your resulting file should look like this:
+
    ```yaml
    name: Stage the app
 
@@ -52,6 +53,7 @@ For now, we'll focus on staging. We'll spin up and destroy our environment in a 
 
        if: contains(github.event.pull_request.labels.*.name, 'stage')
    ```
+
 1. Click **Start commit**, and choose to make a new branch named `staging-workflow`.
 1. Click **Propose changes**.
 1. Click **Create pull request**.
